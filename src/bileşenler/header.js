@@ -11,6 +11,22 @@ const Header = (baslik, tarih, yazi) => {
   //    <span class="temp">{ yazi }</span>
   //  </div>
   //
+
+  const divHeader = document.createElement("div");
+  const spanHeader = document.createElement("span");
+  const spanH1 = document.createElement("h1");
+  const spanHeader2 = document.createElement("span");
+
+  divHeader.appendChild(spanHeader).appendChild(spanH1)
+
+  divHeader.classList.add("header");
+  spanHeader.classList.add("date");
+  spanHeader.textContent = tarih;
+  spanHeader2.classList.add("temp");
+  spanHeader2.textContent = yazi;
+  spanH1.textContent = baslik;
+
+  return divHeader
 }
 
 const headerEkleyici = (secici) => {
