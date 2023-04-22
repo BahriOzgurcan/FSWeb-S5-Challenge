@@ -17,14 +17,17 @@ const Header = (baslik, tarih, yazi) => {
   const spanH1 = document.createElement("h1");
   const spanHeader2 = document.createElement("span");
 
-  divHeader.appendChild(spanHeader).appendChild(spanH1)
-
+  
   divHeader.classList.add("header");
   spanHeader.classList.add("date");
   spanHeader.textContent = tarih;
   spanHeader2.classList.add("temp");
   spanHeader2.textContent = yazi;
   spanH1.textContent = baslik;
+  
+  divHeader.appendChild(spanHeader);
+  divHeader.appendChild(spanH1);
+  divHeader.appendChild(spanHeader2);
 
   return divHeader
 }
@@ -40,6 +43,10 @@ const headerEkleyici = (secici) => {
   // İPUCU: querySelector bir string alabilir (bknz: querySelector("#wrapper")) 
   // fakat aynı zamanda bir değişken de alabilir (bknz: querySelector(secici))
  
+    const haber = Header("Spotify, Türkiye’nin en popüler şarkılarını açıkladı!", "22/04/2013", "Spotify, dünyanın en popüler çevrimiçi müzik servisleri arasında yer alıyor. Abonelik bazlı servis, milyonlarca şarkıyı kütüphanesine barındırıyor. Tabii bu şarkılar da on binlerce sanatçı tarafından yayınlanıyor. Peki 14 Nisan ile 20 Nisan tarihleri aralığında Spotify Türkiye’de en çok dinlenen şarkılar neler? İşte liste…");
+
+    document.querySelector(secici).appendChild(haber);
+
 }
 
 export { Header, headerEkleyici }
