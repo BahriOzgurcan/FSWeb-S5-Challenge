@@ -41,19 +41,37 @@ const Card = (makale) => {
   divCreator2.append(spanCreator);
 
 
-    cardCreator.addEventListener("click", (event) => {
-      let clickedElement = event.target;
-      let search = clickedElement.classList;
+  // cardCreator.addEventListener("click", (event) => {
+  //   const clickedElement = event.target;
+  //   let search = clickedElement.classList;
+  //   let consoleElement = clickedElement;
+
+  //   while (!search.contains("card")) {
+  //     search = clickedElement.parentElement.classList;
+  //     consoleElement = consoleElement.parentElement;
+  //   };
+
+  //   console.log(consoleElement.textContent)
+
+  //   cardCreator.addEventListener("click", (event) => {
+  //     let clickedElement = event.target;
+  //     let search = clickedElement.classList;
 
     
-      while (!search.contains("card")) {
-        search = clickedElement.parentElement.classList;
-        clickedElement = clickedElement.parentElement;
-      };
+  //     while (!search.contains("card")) {
+  //       search = clickedElement.parentElement.classList;
+  //       clickedElement = clickedElement.parentElement;
+  //     };
     
-      console.log(clickedElement.querySelector(".headline").textContent);
+  //     console.log(clickedElement.querySelector(".headline").textContent);
 
-  })
+  // })
+
+  cardCreator.onclick = function(event){
+  
+    console.log(this.querySelector(".headline").textContent);
+
+}
 
   return cardCreator;
 }
