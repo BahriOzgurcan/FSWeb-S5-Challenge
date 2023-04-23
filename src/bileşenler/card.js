@@ -40,8 +40,19 @@ const Card = (makale) => {
   imgContainerCreator.append(imgCreator);
   divCreator2.append(spanCreator);
 
-  cardCreator.addEventListener("click", (event) => {
+
+    cardCreator.addEventListener("click", (event) => {
+      let clickedElement = event.target;
+      let search = clickedElement.classList;
+
     
+      while (!search.contains("card")) {
+        search = clickedElement.parentElement.classList;
+        clickedElement = clickedElement.parentElement;
+      };
+    
+      console.log(clickedElement.querySelector(".headline").textContent);
+
   })
 
   return cardCreator;
@@ -62,9 +73,9 @@ const cardEkleyici = (secici) => {
   const cardApi = axios.get("http://localhost:5001/api/makaleler");
 
   cardApi.then((response) => {
-    const data = response.data.makaleler ;
-    for(let i in data){
-      for(let x of data[i]){
+    const data = response.data.makaleler;
+    for (let i in data) {
+      for (let x of data[i]) {
         document.querySelector(secici).append(Card(x));
       }
     }

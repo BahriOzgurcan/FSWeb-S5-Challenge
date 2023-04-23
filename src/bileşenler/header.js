@@ -43,7 +43,7 @@ const headerEkleyici = (secici) => {
   // İPUCU: querySelector bir string alabilir (bknz: querySelector("#wrapper")) 
   // fakat aynı zamanda bir değişken de alabilir (bknz: querySelector(secici))
 
-  const haber = Header("Spotify, Türkiye’nin en popüler şarkılarını açıkladı!", "22/04/2023", "Spotify, dünyanın en popüler çevrimiçi müzik servisleri arasında yer alıyor. Abonelik bazlı servis, milyonlarca şarkıyı kütüphanesine barındırıyor. Tabii bu şarkılar da on binlerce sanatçı tarafından yayınlanıyor. Peki 14 Nisan ile 20 Nisan tarihleri aralığında Spotify Türkiye’de en çok dinlenen şarkılar neler? İşte liste…");
+  const haber = Header("En Iyi Teknoloji Haber Sitesi", "23/04/2023", "23 Nisan kutlu olsun!");
 
   document.querySelector(secici).appendChild(haber);
 
